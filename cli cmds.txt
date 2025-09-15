@@ -1,0 +1,8 @@
+az bicep build --file main.bicep --stdout
+
+az deployment sub create --location eastus --template-file main.bicep
+
+az bicep build --file postgresql.bicep --stdout
+az deployment sub create --location eastus --template-file postgresql.bicep
+
+az deployment group create --resource-group bicep --template-file postgresql.bicep

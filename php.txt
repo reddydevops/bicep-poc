@@ -1,0 +1,28 @@
+steps:
+
+# - task: AzureCLI@2
+#   name: deployAkv
+#   inputs:
+#     azureSubscription: 'Azure Dev Subscription'
+#     scriptType: 'ps'
+#     scriptLocation: 'inlineScript'
+#     inlineScript: |
+#       az deployment sub create --location canadacentral `
+#         --template-file main-np.bicep  `
+#         --name deploy-akv `
+#         --parameters config/dev/main-param.json currentPrincipalObjId="1196da6a-f9e0-4574-b926-6556e8c8754d" `
+#         runningOnAdo='true'
+# - task: AzureCLI@2
+#   name: deployInfra
+#   inputs:
+#     azureSubscription: 'Azure Dev Subscription'
+#     scriptType: 'ps'
+#     scriptLocation: 'inlineScript'
+#     inlineScript: |
+#       az network application-gateway private-link add `
+#         --resource-group "az99-rg-vsdev01" `
+#         --gateway-name "az99-appgw-vsdev01" `
+#         --name "az99-appgw-vsdev01-pe-endpoint" `
+#         --frontend-ip "appGwPrivateFrontendIp" `
+#         --subnet "/subscriptions/0cea852e-9758-46c3-ada0-b2718fba7b95/resourceGroups/az99-rg-reseau-e99vsdev/providers/Microsoft.Network/virtualNetworks/az99-vnet-e99vsdev/subnets/ApplicationGatewaySubnet"
+
